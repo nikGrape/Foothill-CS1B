@@ -2,12 +2,12 @@ package assignment3;
 
 public class InternetUser
 {
-    public static int MAX_NAME_LENGTH = 50;
-    public static int MIN_NAME_LENGTH = 2;
-    public static int MIN_IP_LENGTH = 7;
-    public static int MAX_IP_LENGTH = 15;
-    public static String DEFAULT_IP = "0.0.0.0";
-    public static String DEFAULT_NAME = "default name";
+    public final static int MAX_NAME_LENGTH = 50;
+    public final static int MIN_NAME_LENGTH = 2;
+    public final static int MIN_IP_LENGTH = 7;
+    public final static int MAX_IP_LENGTH = 15;
+    public final static String DEFAULT_IP = "0.0.0.0";
+    public final static String DEFAULT_NAME = "(undefined)";
 
     private String name;
     private String ip;
@@ -51,9 +51,14 @@ public class InternetUser
         return name;
     }
 
-    public void setName(String name)
+    public boolean setName(String name)
     {
-        this.name = name;
+        if (validateName(name))
+        {
+            this.name = name;
+            return true;
+        }
+        return false;
     }
 
     public String getIp()
@@ -61,14 +66,19 @@ public class InternetUser
         return ip;
     }
 
-    public void setIp(String ip)
+    public boolean setIp(String ip)
     {
-        this.ip = ip;
+        if (validateIP(ip))
+        {
+            this.ip = ip;
+            return true;
+        }
+        return false;
     }
 
     public String toString()
     {
-        return "Name: " + this.name + "\nIP Address: " + this.ip;
+        return "Name: " + this.name + "\nIP Address: " + this.ip + "\n\n";
     }
 }
 
