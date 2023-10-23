@@ -50,15 +50,12 @@ public class Communicator extends InternetUser
 
     public boolean setPrimes(long p, long q)
     {
-        if (p != q)
-        {
-            this.firstPrime = p;
-            this.secondPrime = q;
-            return computeBothEncrKeys(p, q);
-        }
+        if (p == q)
+            return false;
 
-        return false;
-
+        this.firstPrime = p;
+        this.secondPrime = q;
+        return computeBothEncrKeys(p, q);
     }
 
     public IntPair getPublicKey()
@@ -99,7 +96,8 @@ public class Communicator extends InternetUser
 
     @Override public String toString()
     {
-        return "\n----------------\n" + super.toString().trim() + String.format("%n%n(p, q) n, phi, e, d: (%d, %d) %d, %d, %d, %d%n", firstPrime,
-                secondPrime, n, phi, e, d) + String.format("public key:%s%nprivate key:%s%n", publicKey, privateKey);
+        return "\n----------------\n" + super.toString().trim() + String.format(
+                "%n%n(p, q) n, phi, e, d: (%d, %d) %d, %d, %d, %d%n", firstPrime, secondPrime, n, phi, e,
+                d) + String.format("public key:%s%nprivate key:%s%n", publicKey, privateKey);
     }
 }

@@ -19,38 +19,41 @@ public class Foothill
 
 /* ---------------------------------------------------------
 Derived Class Constructor Testing ***************
-
-----------------------
+----------------
 Name: (undefined)
 IP Address: 0.0.0.0
 
-(p, q)  n, phi, e, d: (0, 0)   0, 0, 0, 0
-public key(0, 0)
-private key(0, 0)
+(p, q) n, phi, e, d: (0, 0) 0, 0, 0, 0
+public key:(0, 0)
+private key:(0, 0)
 
-----------------------
+
+----------------
 Name: Nick
 IP Address: 1.1.1.2
 
-(p, q)  n, phi, e, d: (0, 0)   0, 0, 0, 0
-public key(0, 0)
-private key(0, 0)
+(p, q) n, phi, e, d: (0, 0) 0, 0, 0, 0
+public key:(0, 0)
+private key:(0, 0)
 
-----------------------
+
+----------------
 Name: (undefined)
 IP Address: 0.0.0.0
 
-(p, q)  n, phi, e, d: (283, 1129)   319507, 318096, 463, 17252
-public key(463, 319507)
-private key(17252, 319507)
+(p, q) n, phi, e, d: (283, 1129) 319507, 318096, 131, 160973
+public key:(131, 319507)
+private key:(160973, 319507)
 
-----------------------
+
+----------------
 Name: Anurag
 IP Address: 1.1.1.1
 
-(p, q)  n, phi, e, d: (557, 7)   3899, 3336, 463, 3739
-public key(463, 3899)
-private key(3739, 3899)
+(p, q) n, phi, e, d: (557, 7) 3899, 3336, 131, 2768
+public key:(131, 3899)
+private key:(2768, 3899)
+
 
 Process finished with exit code 0
 
