@@ -2,6 +2,13 @@ package submission3;
 
 import java.util.Random;
 
+/**
+ * @author Nikolai Vinogradov
+ * @author Anurag Sanadi
+ * @version 1.0
+ * <p>
+ * This class is used to perform second phase of tests for Communicator class
+ */
 public class Foothill
 {
     public static void main(String[] args)
@@ -71,6 +78,13 @@ private key:(517, 3899)
 Process finished with exit code 0
 --------------------------------------------------------- */
 
+/**
+ * @author Nikolai Vinogradov
+ * @author Anurag Sanadi
+ * @version 1.0
+ * <p>
+ * This class is used to perform first phase of tests for InternetUser class
+ */
 class FoothillPhase1
 {
     public static void main(String[] args)
