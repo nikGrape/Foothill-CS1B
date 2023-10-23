@@ -1,5 +1,6 @@
 package assignment3;
 
+
 public class Communicator extends InternetUser
 {
     public static final int ERROR_FLAG_NUM = 0;
@@ -55,7 +56,7 @@ public class Communicator extends InternetUser
 
         this.firstPrime = p;
         this.secondPrime = q;
-        return computeBothEncrKeys(p, q);
+        return computeBothEncrKeys();
     }
 
     public IntPair getPublicKey()
@@ -68,29 +69,25 @@ public class Communicator extends InternetUser
         return privateKey;
     }
 
-    private boolean computeBothEncrKeys(long p, long q)
-    {
-        if (!EncryptionSupport.isPrime(p) || !EncryptionSupport.isPrime(q))
+    private boolean computeBothEncrKeys() {
+        if(!EncryptionSupport.isPrime(firstPrime) || !EncryptionSupport.isPrime(secondPrime))
             return false;
 
-        n = p * q;
-        phi = (p - 1) * (q - 1);
+        n = firstPrime * secondPrime;
+        phi = (firstPrime - 1) * (secondPrime - 1);
+        e = EncryptionSupport.getSmallRandomPrime();
 
-        long randomPrime;
-        int attempts = 10_000_000;
-        do
-        {
-            randomPrime = EncryptionSupport.getSmallRandomPrime();
-            if (attempts-- <= 0)
+        long numTries = 0;
+        while(e > phi || phi % e == 0) {
+            if (numTries > 10_000_000)
                 return false;
-        } while (randomPrime > phi || phi % randomPrime == 0); //TODO ??? LAS THAN
+            e = EncryptionSupport.getSmallRandomPrime();
+            numTries++;
+        }
 
-        e = randomPrime;
         d = EncryptionSupport.inverseModN(e, n);
-
         publicKey = new IntPair(e, n);
         privateKey = new IntPair(d, n);
-
         return true;
     }
 

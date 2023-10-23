@@ -2,18 +2,15 @@ package stack;
 
 public class StackNode
 {
-    // data (we allow Stack class public access)
     protected StackNode next;
 
-    // constructor
     public StackNode()
     {
         next = null;
     }
 
-    // console display
-    public void show()
+    @Override public String toString()
     {
-        System.out.print( "(generic node) ");
+        return " (generic node) ";
     }
 }
