@@ -1,7 +1,8 @@
-package assignment4;
+package assignment5;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.logging.Logger;
 
 //import javax.annotation.Generated;
@@ -21,7 +22,6 @@ public class CardTest
 {
 
 //  @Generated(value = "org.junit-tools-1.0.6")
-    @SuppressWarnings("unused")
     private Logger logger = Logger.getLogger(CardTest.class.toString());
 
     @Before
@@ -133,7 +133,7 @@ public class CardTest
     public void testIsErrorFlag() throws Exception
     {
         Card testSubject;
-//        boolean result;
+        boolean result;
 
         // default test
         testSubject = createTestSubject();
@@ -149,9 +149,9 @@ public class CardTest
         Assert.assertTrue(testSubject.isErrorFlag()); // Student used 'is' predicate
         testSubject = new Card(testSubject);
         Assert.assertTrue(
-                "Use the set method so that the input card's data is validated and the errorFlag is set correctly. "
+                "Use the set method so that the input card'd data is validated and the errorFlag is set correctly. "
                         + "Don't directly set the member instance variables in the constructors.",
-                testSubject.isErrorFlag()); // Student correctly used 'is' predicate
+                testSubject.isErrorFlag()); // Student used 'is' predicate
     }
 
     @MethodRef(name = "toString", signature = "()QString;")

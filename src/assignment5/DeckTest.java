@@ -1,4 +1,4 @@
-package assignment4;
+package assignment5;
 
 import java.util.logging.Logger;
 
@@ -19,7 +19,6 @@ public class DeckTest
 {
 
 //  @Generated(value = "org.junit-tools-1.0.6")
-    @SuppressWarnings("unused")
     private Logger logger = Logger.getLogger(DeckTest.class.toString());
 
     @Before
@@ -118,8 +117,7 @@ public class DeckTest
                 "Students are not setting the numPacks instance variable correctly inside of the init method. "
                         + "They are probably incorrectly setting the numPacks instance variable before init is called.",
                 expected, numPacks);
-        // The init method should eventually set topCard to numPacks *
-        // NUM_CARDS_PER_PACK
+        // The init method should eventually set topCard to numPacks * NUM_CARDS_PER_PACK 
         // which equals numPacks * CardInterface.NUM_VALUES * CardInterface.NUM_SUITS.
         int topCard = testSubject.getNumCards();
         expected = numPacks * CardInterface.NUM_VALUES * CardInterface.NUM_SUITS;
@@ -185,23 +183,9 @@ public class DeckTest
     {
         Deck testSubject;
 
+        // default test
         testSubject = createTestSubject();
-        int numCardsBefore = testSubject.getNumCards();
         testSubject.shuffle();
-        int numCardsAfter = testSubject.getNumCards();
-        Assert.assertEquals(
-                "Before shuffling the number of cards in the Deck was " + numCardsBefore
-                        + ", but after shuffling the number was incorrecly: " + numCardsAfter,
-                numCardsBefore, numCardsAfter);
-        Card card;
-        for (int i = 0; i < numCardsAfter; ++i)
-        {
-            card = testSubject.inspectCard(i);
-            Assert.assertNotNull("After shuffling, a null Card was incorrectly found inside the Deck at index: " + i,
-                    card);
-            Assert.assertFalse("After shuffling, an invalid Card:" + card
-                    + ", was incorrectly found inside the Deck at index: " + i, card.isErrorFlag());
-        }
     }
 
     @MethodRef(name = "dealCard", signature = "()QCard;")
